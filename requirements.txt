@@ -6,7 +6,6 @@ seaborn
 scikit-learn
 underthesea
 regex
-string
 pickle
 wordcloud
 collections

@@ -13,9 +13,9 @@ from sklearn.ensemble import RandomForestClassifier
 from collections import Counter
 
 #1. Load data
-df_san_pham = pd.read_csv('data/San_pham.csv')
-df_khach_hang = pd.read_csv('data/Khach_hang.csv')
-df_danh_gia = pd.read_csv('data/Preprocess_San_pham.csv').dropna()
+df_san_pham = pd.read_csv('San_pham.csv')
+df_khach_hang = pd.read_csv('Khach_hang.csv')
+df_danh_gia = pd.read_csv('Preprocess_San_pham.csv').dropna()
 
 
 #2. Function process data:

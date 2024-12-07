@@ -217,7 +217,7 @@ elif choice == 'Customer analysis':
     ma_khach_hang_drop_down_box = [121, 365, 833, 4735, 399]
     ma_khach_hang_choice = st.selectbox('Mã khách hàng', ma_khach_hang_drop_down_box)
 
-    if st.button("Phân tích sản phẩm"):
+    if st.button("Phân tích khách hàng"):
         customer_info = df_khach_hang[df_khach_hang['ma_khach_hang'] == ma_khach_hang_choice]
 
         if customer_info.empty:

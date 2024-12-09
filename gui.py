@@ -161,12 +161,19 @@ elif choice == 'Product analysis':
             st.write(f"**Số nhận xét trung lập:** {label_counts.get('neutral', 0)}")
 
             # Trích xuất từ khóa chính
-            st.write("### Từ khóa chính liên quan:")
+            st.write("### Word Cloud:")
             all_text = ' '.join(product_reviews['noi_dung_binh_luan'])
             vectorizer = CountVectorizer(stop_words='english', max_features=20)
             keywords = vectorizer.fit_transform([all_text])
             keyword_counts = Counter(vectorizer.get_feature_names_out())
-            st.write(sorted(keyword_counts.items(), key=lambda x: x[1], reverse=True))
+
+            # Tạo word cloud từ từ khóa
+            wordcloud = WordCloud(width=800, height=400, background_color='white').generate_from_frequencies(dict(keyword_counts))
+
+            fig, ax = plt.subplots(figsize=(10, 5))
+            ax.imshow(wordcloud, interpolation='bilinear')
+            ax.axis("off")
+            st.pyplot(fig)
 
             # Biểu đồ tỷ lệ nhận xét
             st.write("### Biểu đồ tỷ lệ nhận xét:")
